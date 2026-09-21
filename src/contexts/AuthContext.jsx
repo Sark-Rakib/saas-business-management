@@ -1,7 +1,6 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState, useCallback } from "react";
-import { useRouter } from "next/navigation";
 import api, { getErrorMessage } from "@/lib/api";
 
 const AuthContext = createContext(null);
@@ -11,7 +10,6 @@ export const AuthProvider = ({ children }) => {
   const [business, setBusiness] = useState(null);
   const [subscription, setSubscription] = useState(null);
   const [loading, setLoading] = useState(true);
-  const router = useRouter();
 
   const fetchMe = useCallback(async () => {
     try {
@@ -65,7 +63,7 @@ export const AuthProvider = ({ children }) => {
     setUser(null);
     setBusiness(null);
     setSubscription(null);
-    router.push("/auth/login");
+    window.location.href = "/auth/login";
   };
 
   const refreshData = async () => {
