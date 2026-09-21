@@ -3,8 +3,8 @@ import axios from "axios";
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 function resolveBaseURL() {
-  if (API_URL) return API_URL;
   if (process.env.NODE_ENV === "production") return "/api";
+  if (API_URL) return API_URL;
   if (typeof window !== "undefined") {
     const host = window.location.hostname;
     return `${window.location.protocol}//${host}:5000/api`;
