@@ -21,7 +21,7 @@ export default function StatCard({ title, value, icon, color = "primary", trend,
       <div className="min-w-0">
         <p className="text-sm text-ink-muted truncate">{title}</p>
         <div className="flex items-baseline gap-2 mt-0.5">
-          <p className="text-lg sm:text-2xl font-bold text-ink break-words">{value}</p>
+          <p className="text-sm sm:text-base font-semibold text-ink break-words">{value}</p>
           {trend && (
             <span
               className={`text-xs font-medium ${
